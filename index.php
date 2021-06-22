@@ -35,11 +35,14 @@ try
  
 	//Via querys
 	//$pesq = "Tatä Caça";
-	$pesq = "";
-	$sql = "SELECT * FROM $tabela WHERE name = :nome_param";	
+	//$sql = "SELECT * FROM $tabela WHERE name = :nome_param";
+	$sql = "SELECT * FROM $tabela";
 	
   $stmt = $conn->prepare($sql);
-  $stmt->bindParam(":nome_param", $pesq, PDO::PARAM_STR);
+	
+  //Definição de parâmetros
+  //$stmt->bindParam(":nome_param", $pesq, PDO::PARAM_STR);
+	
   $stmt->execute();
 	
 	echo'<p>'.$sql.'</p><hr>';
