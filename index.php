@@ -33,6 +33,9 @@
 		echo $linha["name"];
 		echo '</p>';
 	}
+	
+echo '<hr><p>Resultados: '.$stmt->rowCount().'</p>';
+	$conn = null;
 ?> 
   
   
