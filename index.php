@@ -19,23 +19,16 @@
 	$servername = "sql10.freemysqlhosting.net";
 	$username = "sql10420853";
 	$password = "8uie8DbjXG";
+	$dbname =s "ql10420853";
 
-	try {
-	  $conn = new PDO("mysql:host=$servername;dbname=sql10420853", $username, $password);	  
-	  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-		  $stmt = $conn->prepare("SELECT id, name, email FROM product");
-		  $stmt->execute();
-		
-		  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-		  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-		    echo $v;
-		  }		
-		
-	  echo "Connected successfully";
-	} catch(PDOException $e) {
-	  echo "Connection failed: " . $e->getMessage();
-	}
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 ?> 
   
   
