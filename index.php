@@ -16,6 +16,8 @@
   
   
 <?php
+	header('Content-Type: text/html; charset=utf-8');
+	
 	$servername = "sql10.freemysqlhosting.net";
 	$username = "sql10420853";
 	$password = "8uie8DbjXG";
