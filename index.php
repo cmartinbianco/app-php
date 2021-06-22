@@ -16,7 +16,6 @@
   
   
 <?php
-	header('Content-Type: text/html; charset=utf-8');
 	
 	$servername = "sql10.freemysqlhosting.net";
 	$username = "sql10420853";
@@ -24,7 +23,7 @@
 	$dbname = "sql10420853";
 
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-  $conn->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf8'");
+  $conn->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
   
   $stmt = $conn->prepare("SELECT id, name, email FROM product");
   $stmt->execute();
