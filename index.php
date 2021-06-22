@@ -5,7 +5,7 @@
   <link rel="shortcut icon" href="https://app-php-my.herokuapp.com/favicon.ico" type="image/x-icon">
 	
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
   <title>Título da Página (Estrutura básica de uma página com HTML 5)</title>
   <link href="css/stylesheet.css" rel="stylesheet"/>
   <script src="scripts/script.js"></script>
@@ -27,12 +27,16 @@
   $stmt = $conn->prepare("SELECT id, name, email FROM product");
   $stmt->execute();
 
-  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-    echo $v;
-  }
-	
-echo '<hr><p>Resultados: '.$stmt->rowCount().'</p>';
+	foreach($stmt as $linha)
+	{
+		echo '<p>';
+		//Nome do campo na tabela pesquisada
+		echo $linha["name"];
+		echo '</p>';
+	}
+ 
+	echo '<hr><p>Resultados: '.$stmt->rowCount().'</p>';	
+
 	$conn = null;
 ?> 
   
