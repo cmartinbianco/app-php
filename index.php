@@ -34,7 +34,8 @@ try
 	//$sql = "CALL Nome_da_procedure()";
  
 	//Via querys
-	$pesq = "Tatä Caça";
+	//$pesq = "Tatä Caça";
+	$pesq = "";
 	$sql = "SELECT * FROM $tabela WHERE name = :nome_param";	
 	
   $stmt = $conn->prepare($sql);
