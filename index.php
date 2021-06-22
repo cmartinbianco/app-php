@@ -16,7 +16,7 @@
   
   
 <?php
-	header('Content-Type: text/html; charset=utf-8');
+	//header('Content-Type: text/html; charset=utf-8');
 	
 	$servername = "sql10.freemysqlhosting.net";
 	$username = "sql10420853";
