@@ -23,6 +23,7 @@
 
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conn->set_charset("utf8");
   $stmt = $conn->prepare("SELECT id, name, email FROM product");
   $stmt->execute();
 
