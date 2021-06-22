@@ -24,7 +24,7 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
   $http.get("api.php?name=pen").then(function (response) {
-      $scope.myData = response.empregados;
+      $scope.myData = response.data.data.empregados;
   });
 });
 </script>
