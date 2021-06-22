@@ -7,22 +7,14 @@ if(!empty($_GET['name']))
 	$name=$_GET['name'];
 	// $price = get_price($name);
 	
-	$price = array('empregados' => array(
-	    array(
-		'nome' => 'Jason Jones',
-		'idade' => 38,
-		'sexo' => 'M'
-	    ),
-	    array(
-		'nome' => 'Ada Pascalina',
-		'idade' => 35,
-		'sexo' => 'F'
-	    ),
-	    array(
-		'nome' => 'Delphino da Silva',
-		'idade' => 26,
-		'sexo' => 'M'
-	    )));
+$json_str = '{"empregados": '.
+		'[{"nome":"Jason Jones", "idade":38, "sexo": "M", "dependentes": ["Sedna Jones", "Ian Jones"]},'.
+		'{"nome":"Ada Pascalina", "idade":35, "sexo": "F"},'.
+		'{"nome":"Delphino da Silva", "idade":26, "sexo": "M"}'.
+		'],
+		"data": "15/12/2012"}';
+	
+	$price = json_decode($json_str);
 	
 	if(empty($price))
 	{
