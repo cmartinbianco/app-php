@@ -21,9 +21,17 @@
 	$password = "8uie8DbjXG";
 
 	try {
-	  $conn = new PDO("mysql:host=$servername;dbname=sql10420853", $username, $password);
-	  // set the PDO error mode to exception
+	  $conn = new PDO("mysql:host=$servername;dbname=sql10420853", $username, $password);	  
 	  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		  $stmt = $conn->prepare("SELECT id, name, email FROM product");
+		  $stmt->execute();
+		
+		  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+		    echo $v;
+		  }		
+		
 	  echo "Connected successfully";
 	} catch(PDOException $e) {
 	  echo "Connection failed: " . $e->getMessage();
