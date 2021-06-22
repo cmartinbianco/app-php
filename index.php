@@ -23,17 +23,14 @@
 
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $conn->set_charset("utf8");
+  
   $stmt = $conn->prepare("SELECT id, name, email FROM product");
   $stmt->execute();
 
-	foreach($stmt as $linha)
-	{
-		echo '<p>';
-		//Nome do campo na tabela pesquisada
-		echo $linha["name"];
-		echo '</p>';
-	}
+  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+    echo $v;
+  }
 	
 echo '<hr><p>Resultados: '.$stmt->rowCount().'</p>';
 	$conn = null;
