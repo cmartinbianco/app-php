@@ -5,7 +5,24 @@ require "data.php";
 if(!empty($_GET['name']))
 {
 	$name=$_GET['name'];
-	$price = get_price($name);
+	// $price = get_price($name);
+	
+	$price = array('empregados' => array(
+	    array(
+		'nome' => 'Jason Jones',
+		'idade' => 38,
+		'sexo' => 'M'
+	    ),
+	    array(
+		'nome' => 'Ada Pascalina',
+		'idade' => 35,
+		'sexo' => 'F'
+	    ),
+	    array(
+		'nome' => 'Delphino da Silva',
+		'idade' => 26,
+		'sexo' => 'M'
+	    )));
 	
 	if(empty($price))
 	{
