@@ -19,7 +19,7 @@
 	$servername = "sql10.freemysqlhosting.net";
 	$username = "sql10420853";
 	$password = "8uie8DbjXG";
-	$dbname = "ql10420853";
+	$dbname = "sql10420853";
 
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
