@@ -3,6 +3,7 @@
   
 <head>  
   <link rel="shortcut icon" href="https://app-php-my.herokuapp.com/favicon.ico" type="image/x-icon">
+	
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
   <title>Título da Página (Estrutura básica de uma página com HTML 5)</title>
