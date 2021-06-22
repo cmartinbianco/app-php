@@ -15,32 +15,20 @@
 <body>
   
   
-	 <header>
-	    <nav>
-	        <ul>
-	            <li>Home</li>
-	            <li>Contato</li>
-	        </ul>
-	    </nav>
-	</header>
- 
-	<section>
-	    <article>
-	        <header>
-	            <h2>O título do artigo é aqui</h2>
-	            <p>Publicado em <time datetime="2015-03-09T13:00:24+01:00">09 de Março de 2015</time> por <a href="#">Author</a> - <a href="#comments">30 comentários</a></p>
-	        </header>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	    </article>
- 
-	    <article>
-	        <header>
-	            <h2>O título do artigo é aqui</h2>
-	            <p>Publicado em <time datetime="2015-03-09T13:00:24+01:00">09 de Março de 2015</time> por <a href="#">Author</a> - <a href="#comments">15 comentários</a></p>
-	        </header>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	    </article>
-	</section>
+<?php
+	$servername = "sql10.freemysqlhosting.net";
+	$username = "sql10420853";
+	$password = "8uie8DbjXG";
+
+	try {
+	  $conn = new PDO("mysql:host=$servername;dbname=sql10420853", $username, $password);
+	  // set the PDO error mode to exception
+	  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	  echo "Connected successfully";
+	} catch(PDOException $e) {
+	  echo "Connection failed: " . $e->getMessage();
+	}
+?> 
   
   
 <div ng-app="myApp" ng-controller="customersCtrl"> 
@@ -52,16 +40,6 @@
 </ul>
 
 </div>
-  
-  
-	<aside>
-	    <h2>Entre em contato</h2>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	</aside>
- 
-	<footer>
-	    <p>Copyright 2015 Código Fonte©</p>
-	</footer>  
 
   
 <script>
