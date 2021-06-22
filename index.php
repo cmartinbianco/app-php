@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!DOCTYPE HTML>
+<html lang="pt-br">
   
 <head>  
-<link rel="shortcut icon" href="https://app-php-my.herokuapp.com/favicon.ico" type="image/x-icon">  
+  <link rel="shortcut icon" href="https://app-php-my.herokuapp.com/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+  <title>Título da Página (Estrutura básica de uma página com HTML 5)</title>
+  <link href="css/stylesheet.css" rel="stylesheet"/>
+  <script src="scripts/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>  
-<title>CMB app</title> 
   
 <body>
-
   
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
