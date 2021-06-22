@@ -15,24 +15,37 @@
 <body>
   
   
-<?php
-	//header('Content-Type: text/html; charset=utf-8');
+<?php	
 	
 	$servername = "sql10.freemysqlhosting.net";
 	$username = "sql10420853";
 	$password = "8uie8DbjXG";
 	$dbname = "sql10420853";
+	
+	$tabela = "product";
 
+try
+{	
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
-  $stmt = $conn->prepare("SELECT id, name, email FROM product");
+	//Via procedures
+	//$pesq = "";
+	//$sql = "CALL Nome_da_procedure()";
+ 
+	//Via querys
+	$pesq = "Tatä Caça";
+	$sql = "SELECT * FROM $tabela WHERE name = :nome_param";	
+	
+  $stmt = $conn->prepare($sql);
+  $stmt->bindParam(":nome_param", $pesq, PDO::PARAM_STR);
   $stmt->execute();
+	
+	echo'<p>'.$sql.'</p><hr>';
 
 	foreach($stmt as $linha)
 	{
 		echo '<p>';
-		//Nome do campo na tabela pesquisada
 		echo $linha["name"];
 		echo '</p>';
 	}
@@ -40,6 +53,13 @@
 	echo '<hr><p>Resultados: '.$stmt->rowCount().'</p>';	
 
 	$conn = null;
+	
+}
+catch(PDOException $erro)
+{
+	echo $erro->getMessage();
+}
+	
 ?> 
   
   
