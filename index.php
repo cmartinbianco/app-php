@@ -26,11 +26,13 @@
   $stmt = $conn->prepare("SELECT id, name, email FROM product");
   $stmt->execute();
 
-  // set the resulting array to associative
-  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-    echo $v;
-  }
+	foreach($stmt as $linha)
+	{
+		echo '<p>';
+		//Nome do campo na tabela pesquisada
+		echo $linha["name"];
+		echo '</p>';
+	}
 ?> 
   
   
