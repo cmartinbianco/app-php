@@ -45,10 +45,10 @@
   
 <?php	
 	
-	$servername = process.env.servername;
-	$username = process.env.username;
-	$password = process.env.password;
-	$dbname = process.env.dbname;
+	$servername = getenv('servername');
+	$username = getenv('username');
+	$password = getenv('password');
+	$dbname = getenv('dbname');
 	
 	$tabela = "product";
 
