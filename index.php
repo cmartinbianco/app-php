@@ -45,10 +45,10 @@
   
 <?php	
 	
-	$servername = "sql10.freemysqlhosting.net";
-	$username = "sql10420853";
-	$password = "8uie8DbjXG";
-	$dbname = "sql10420853";
+	$servername = process.env.servername;
+	$username = process.env.username;
+	$password = process.env.password;
+	$dbname = process.env.dbname;
 	
 	$tabela = "product";
 
